@@ -126,9 +126,3 @@ npm start
 - Repita montar/desmontar para acelerar o vazamento.
 - Foque em objetos com aumento entre snapshots.
 - Verifique listeners e nós "detached".
-
----
-
-## 📜 Licença
-
-Conteúdo para estudo — não há licença explícita definida no repositório. Adicione uma licença se necessário.

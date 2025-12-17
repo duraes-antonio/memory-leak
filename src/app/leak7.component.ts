@@ -25,7 +25,12 @@ declare var $: any;
 })
 export class Leak7Component implements OnInit, OnDestroy {
     ngOnInit() {
-        $('#speed').selectmenu();
+		$("#speed").selectmenu({
+			change: function( event: any, ui: any ) {
+				var selectedValue = $(this).val();
+				console.log("Selected value: " + selectedValue);
+			}
+		});
     }
 
     ngOnDestroy() {

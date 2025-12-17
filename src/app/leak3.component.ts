@@ -8,7 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
     standalone: true,
 })
 export class Leak3Component implements OnInit, OnDestroy {
-    private intervalId?: number;
+    private intervalId?: any;
 
     ngOnInit() {
         this.intervalId = setInterval(() => console.log('tick'), 50);

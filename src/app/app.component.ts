@@ -15,7 +15,11 @@ import { Leak7Component } from './leak7.component';
     imports: [CommonModule],
     template: `
         <div style="display: flex; column-gap: 8px">
-            <button *ngFor="let item of leaks" (click)="item.visible = !item.visible">
+            <button
+                [title]="item.title"
+                *ngFor="let item of leaks"
+                (click)="item.visible = !item.visible"
+            >
                 Toggle {{ item.label }}
             </button>
         </div>
@@ -31,12 +35,42 @@ import { Leak7Component } from './leak7.component';
 })
 export class AppComponent {
     leaks = [
-        { label: 'LEAK 1', component: Leak1Component, visible: false },
-        { label: 'LEAK 2', component: Leak2Component, visible: false },
-        { label: 'LEAK 3', component: Leak3Component, visible: false },
-        { label: 'LEAK 4', component: Leak4Component, visible: false },
-        { label: 'LEAK 5', component: Leak5Component, visible: false },
-        { label: 'LEAK 6', component: Leak6Component, visible: false },
-        { label: 'LEAK 7', component: Leak7Component, visible: false },
+        {
+            label: 'LEAK 1',
+            title: 'RXJS Subscription não cancelada',
+            component: Leak1Component,
+            visible: false,
+        },
+        {
+            label: 'LEAK 2',
+            title: 'Event listeners não removidos',
+            component: Leak2Component,
+            visible: false,
+        },
+        { label: 'LEAK 3', title: 'Timers não limpos', component: Leak3Component, visible: false },
+        {
+            label: 'LEAK 4',
+            title: 'Referência de componente armazenada',
+            component: Leak4Component,
+            visible: false,
+        },
+        {
+            label: 'LEAK 5',
+            title: 'Renderer2 sem remover elementos',
+            component: Leak5Component,
+            visible: false,
+        },
+        {
+            label: 'LEAK 6',
+            title: 'Elementos criados fora do Angular',
+            component: Leak6Component,
+            visible: false,
+        },
+        {
+            label: 'LEAK 7',
+            title: 'Bibliotecas externas (jQueryUI)',
+            component: Leak7Component,
+            visible: false,
+        },
     ];
 }
